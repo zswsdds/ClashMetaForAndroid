@@ -34,12 +34,12 @@ object Remote {
             if(it) {
                 Log.d("App becomes visible")
                 service.bind()
-                broadcasts.register()
+                //broadcasts.register()
             }
             else {
                 Log.d("App becomes invisible")
                 service.unbind()
-                broadcasts.unregister()
+                //broadcasts.unregister()
             }
         }
 
