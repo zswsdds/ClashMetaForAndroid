@@ -28,20 +28,22 @@ object Remote {
     private val visible = Channel<Boolean>(Channel.CONFLATED)
 
     fun launch() {
-        ApplicationObserver.attach(Global.application)
+        service.bind()
+        broadcasts.register()
+        // ApplicationObserver.attach(Global.application)
 
-        ApplicationObserver.onVisibleChanged {
-            if(it) {
-                Log.d("App becomes visible")
-                service.bind()
-                broadcasts.register()
-            }
-            else {
-                Log.d("App becomes invisible")
-                //service.unbind()
-                //broadcasts.unregister()
-            }
-        }
+        // ApplicationObserver.onVisibleChanged {
+        //     if(it) {
+        //         Log.d("App becomes visible")
+        //         service.bind()
+        //         broadcasts.register()
+        //     }
+        //     else {
+        //         Log.d("App becomes invisible")
+        //         service.unbind()
+        //         broadcasts.unregister()
+        //     }
+        // }
 
         Global.launch(Dispatchers.IO) {
             verifyApp()
