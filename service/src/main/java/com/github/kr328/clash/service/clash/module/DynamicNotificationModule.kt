@@ -30,6 +30,7 @@ class DynamicNotificationModule(service: Service) : Module<Unit>(service) {
         .setOnlyAlertOnce(true)
         .setShowWhen(false)
         .setContentTitle("Not Selected")
+        .setPriority(NotificationCompat.PRIORITY_MIN)
         .setForegroundServiceBehavior(NotificationCompat.FOREGROUND_SERVICE_IMMEDIATE)
         .setContentIntent(
             PendingIntent.getActivity(
