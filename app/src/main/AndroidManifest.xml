@@ -67,6 +67,8 @@
         <activity
             android:name=".ExternalControlActivity"
             android:exported="true"
+            android:taskAffinity="com.github.kr328.clash.external"
+            android:launchMode="singleTask"
             android:label="@string/external_control_activity"
             android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen">
             <intent-filter>
