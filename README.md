@@ -1,3 +1,9 @@
+## Features
+
+- Exclude MainActivity from recents
+- Keep the broadcast receiver active in the background
+- Using an Intent to toggle the state does not display MainActivity
+
 ## Clash Meta for Android
 
 A Graphical user interface of [Clash.Meta](https://github.com/MetaCubeX/Clash.Meta) for Android
