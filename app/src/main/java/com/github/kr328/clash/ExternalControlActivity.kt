@@ -60,14 +60,14 @@ class ExternalControlActivity : Activity(), CoroutineScope by MainScope() {
                 startClash()
             }
             else {
-                Toast.makeText(this, R.string.external_control_started, Toast.LENGTH_LONG).show()
+                Toast.makeText(this, R.string.external_control_started, Toast.LENGTH_SHORT).show()
             }
 
             Intents.ACTION_STOP_CLASH -> if(Remote.broadcasts.clashRunning) {
                 stopClash()
             }
             else {
-                Toast.makeText(this, R.string.external_control_stopped, Toast.LENGTH_LONG).show()
+                Toast.makeText(this, R.string.external_control_stopped, Toast.LENGTH_SHORT).show()
             }
         }
         return finish()
@@ -83,11 +83,11 @@ class ExternalControlActivity : Activity(), CoroutineScope by MainScope() {
             Toast.makeText(this, R.string.unable_to_start_vpn, Toast.LENGTH_LONG).show()
             return
         }
-        Toast.makeText(this, R.string.external_control_started, Toast.LENGTH_LONG).show()
+        Toast.makeText(this, R.string.external_control_started, Toast.LENGTH_SHORT).show()
     }
 
     private fun stopClash() {
         stopClashService()
-        Toast.makeText(this, R.string.external_control_stopped, Toast.LENGTH_LONG).show()
+        Toast.makeText(this, R.string.external_control_stopped, Toast.LENGTH_SHORT).show()
     }
 }
